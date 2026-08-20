@@ -1669,6 +1669,34 @@ function stripFormatting(text) {
 
 
 /* =========================================
+   HERO DEPTH INTERACTION
+========================================= */
+
+const tiltCard = document.querySelector("[data-tilt-card]");
+
+if (tiltCard && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+
+    tiltCard.addEventListener("pointermove", function (event) {
+
+        const bounds = tiltCard.getBoundingClientRect();
+        const x = (event.clientX - bounds.left) / bounds.width - 0.5;
+        const y = (event.clientY - bounds.top) / bounds.height - 0.5;
+
+        tiltCard.style.transform =
+            `rotateX(${y * -5}deg) rotateY(${x * 5}deg)`;
+
+    });
+
+    tiltCard.addEventListener("pointerleave", function () {
+
+        tiltCard.style.transform = "rotateX(0deg) rotateY(0deg)";
+
+    });
+
+}
+
+
+/* =========================================
    INITIALIZATION
 ========================================= */
 
