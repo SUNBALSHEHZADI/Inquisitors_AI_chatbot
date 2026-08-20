@@ -24,9 +24,12 @@ Response
 """
 
 from contextlib import asynccontextmanager
+from pathlib import Path
 
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.responses import FileResponse
+from fastapi.staticfiles import StaticFiles
 
 from app.api.routes import (
     router,
@@ -132,6 +135,16 @@ app = FastAPI(
 )
 
 
+PROJECT_ROOT = Path(__file__).resolve().parents[1]
+FRONTEND_PATH = PROJECT_ROOT / "frontend"
+
+app.mount(
+    "/assets",
+    StaticFiles(directory=FRONTEND_PATH / "assets"),
+    name="assets"
+)
+
+
 # ============================================================
 # CORS
 # ============================================================
@@ -177,7 +190,7 @@ app.include_router(
 # ROOT ENDPOINT
 # ============================================================
 
-@app.get("/")
+@app.get("/api-info")
 def root():
     """
     Basic API information.
@@ -210,3 +223,10 @@ def health():
         "llm": "groq",
         "version": APP_VERSION
     }
+
+
+@app.get("/")
+def frontend():
+    """Serve the single-page frontend from the same Space origin."""
+
+    return FileResponse(FRONTEND_PATH / "index.html")
