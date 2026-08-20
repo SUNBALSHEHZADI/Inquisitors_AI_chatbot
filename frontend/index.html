@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Inquisitors Society | Learn • Grow • Build</title>
+
+    <meta name="description"
+        content="Inquisitors Society - A student-focused learning and development community.">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- =========================
+         NAVIGATION
+    ========================== -->
+
+    <header class="navbar">
+
+        <div class="nav-container">
+
+            <div class="brand">
+
+                <img src="assets/logo.png"
+                     alt="Inquisitors Society Logo"
+                     class="nav-logo">
+
+                <div>
+                    <h2>INQUISITORS</h2>
+                    <span>Learn • Grow • Build</span>
+                </div>
+
+            </div>
+
+            <nav>
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#programs">Programs</a>
+                <a href="#internships">Internships</a>
+                <a href="#events">Events</a>
+            </nav>
+
+        </div>
+
+    </header>
+
+
+    <!-- =========================
+         HERO SECTION
+    ========================== -->
+
+    <main>
+
+        <section id="home" class="hero">
+
+            <div class="hero-content">
+
+                <div class="hero-text">
+
+                    <span class="badge">
+                        STUDENT LEARNING COMMUNITY
+                    </span>
+
+                    <h1>
+                        Learn.
+                        <span>Grow.</span>
+                        Build.
+                    </h1>
+
+                    <p>
+                        Inquisitors Society is a student-focused community
+                        designed to help learners develop technical,
+                        professional and research-oriented skills through
+                        learning, collaboration and practical projects.
+                    </p>
+
+                    <div class="hero-buttons">
+
+                        <button class="primary-btn"
+                                onclick="openChat()">
+                            Ask Inquisitors AI
+                        </button>
+
+                        <button class="secondary-btn"
+                                onclick="scrollToSection('programs')">
+                            Explore Programs
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <div class="hero-card">
+
+                    <div class="ai-icon">
+
+                        <img src="assets/logo.png"
+                             alt="Inquisitors AI">
+
+                    </div>
+
+                    <h3>Inquisitors AI Assistant</h3>
+
+                    <p>
+                        Your intelligent assistant for society information,
+                        internships, events, training and student guidance.
+                    </p>
+
+                    <button onclick="openChat()" class="chat-btn">
+                        Start Conversation →
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             ABOUT
+        ========================== -->
+
+        <section id="about" class="section">
+
+            <div class="section-heading">
+
+                <span>ABOUT US</span>
+
+                <h2>Learning Beyond the Classroom</h2>
+
+                <p>
+                    The society aims to create an environment where students
+                    can learn new technologies, collaborate with peers,
+                    participate in practical activities and explore
+                    professional opportunities.
+                </p>
+
+            </div>
+
+
+            <div class="feature-grid">
+
+                <div class="feature-card">
+
+                    <div class="feature-icon">01</div>
+
+                    <h3>Learn</h3>
+
+                    <p>
+                        Explore technical skills, emerging technologies,
+                        research concepts and professional development.
+                    </p>
+
+                </div>
+
+
+                <div class="feature-card">
+
+                    <div class="feature-icon">02</div>
+
+                    <h3>Collaborate</h3>
+
+                    <p>
+                        Work with students from different backgrounds,
+                        domains and skill levels.
+                    </p>
+
+                </div>
+
+
+                <div class="feature-card">
+
+                    <div class="feature-icon">03</div>
+
+                    <h3>Build</h3>
+
+                    <p>
+                        Turn knowledge into practical projects,
+                        assignments and real-world experiences.
+                    </p>
+
+                </div>
+
+
+                <div class="feature-card">
+
+                    <div class="feature-icon">04</div>
+
+                    <h3>Grow</h3>
+
+                    <p>
+                        Develop technical, communication, teamwork and
+                        professional skills.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             PROGRAMS
+        ========================== -->
+
+        <section id="programs" class="section light-section">
+
+            <div class="section-heading">
+
+                <span>LEARNING AREAS</span>
+
+                <h2>Explore Different Domains</h2>
+
+                <p>
+                    Students can explore multiple technical and creative
+                    domains through learning activities and practical work.
+                </p>
+
+            </div>
+
+
+            <div class="program-grid">
+
+                <div class="program-card">
+                    <span>AI</span>
+                    <h3>Artificial Intelligence</h3>
+                    <p>Explore intelligent systems and modern AI concepts.</p>
+                </div>
+
+                <div class="program-card">
+                    <span>ML</span>
+                    <h3>Machine Learning</h3>
+                    <p>Learn algorithms, models and practical ML workflows.</p>
+                </div>
+
+                <div class="program-card">
+                    <span>DS</span>
+                    <h3>Data Science</h3>
+                    <p>Work with data, analysis, visualization and insights.</p>
+                </div>
+
+                <div class="program-card">
+                    <span>R</span>
+                    <h3>Research</h3>
+                    <p>Explore research skills, projects and academic learning.</p>
+                </div>
+
+                <div class="program-card">
+                    <span>WD</span>
+                    <h3>Web Development</h3>
+                    <p>Build modern websites and web-based applications.</p>
+                </div>
+
+                <div class="program-card">
+                    <span>CW</span>
+                    <h3>Content Writing</h3>
+                    <p>Develop writing, communication and content skills.</p>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             INTERNSHIPS
+        ========================== -->
+
+        <section id="internships" class="section">
+
+            <div class="internship-container">
+
+                <div>
+
+                    <span class="section-label">
+                        STUDENT OPPORTUNITIES
+                    </span>
+
+                    <h2>Internships & Practical Experience</h2>
+
+                    <p>
+                        Internship programs can provide students with
+                        opportunities to learn, collaborate, complete
+                        practical assignments and develop professional skills.
+                    </p>
+
+                    <div class="domain-list">
+
+                        <span>Artificial Intelligence</span>
+                        <span>Machine Learning</span>
+                        <span>Data Science</span>
+                        <span>Research</span>
+                        <span>Web Development</span>
+                        <span>Content Writing</span>
+                        <span>Graphic Design</span>
+                        <span>Digital Marketing</span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="info-box">
+
+                    <div class="info-number">01</div>
+
+                    <h3>Learn</h3>
+
+                    <p>
+                        Participate in learning sessions and training.
+                    </p>
+
+                    <div class="info-number">02</div>
+
+                    <h3>Practice</h3>
+
+                    <p>
+                        Work on assignments and practical activities.
+                    </p>
+
+                    <div class="info-number">03</div>
+
+                    <h3>Build</h3>
+
+                    <p>
+                        Develop projects and collaborate with peers.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             EVENTS
+        ========================== -->
+
+        <section id="events" class="section light-section">
+
+            <div class="section-heading">
+
+                <span>COMMUNITY ACTIVITIES</span>
+
+                <h2>Events & Activities</h2>
+
+            </div>
+
+
+            <div class="event-grid">
+
+                <div class="event-card">
+
+                    <div class="event-date">
+                        WORKSHOP
+                    </div>
+
+                    <h3>Technical Workshops</h3>
+
+                    <p>
+                        Interactive sessions focused on practical
+                        technical learning.
+                    </p>
+
+                </div>
+
+
+                <div class="event-card">
+
+                    <div class="event-date">
+                        SEMINAR
+                    </div>
+
+                    <h3>Research Seminars</h3>
+
+                    <p>
+                        Sessions designed to introduce students to
+                        research and academic opportunities.
+                    </p>
+
+                </div>
+
+
+                <div class="event-card">
+
+                    <div class="event-date">
+                        COMPETITION
+                    </div>
+
+                    <h3>Student Competitions</h3>
+
+                    <p>
+                        Opportunities to apply skills through
+                        challenges and practical activities.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================
+         CHATBOT
+    ========================== -->
+
+    <div id="chat-overlay" class="chat-overlay">
+
+        <div class="chat-window">
+
+            <div class="chat-header">
+
+                <div class="chat-brand">
+
+                    <img src="assets/logo.png"
+                         alt="Inquisitors AI">
+
+                    <div>
+                        <h3>Inquisitors AI</h3>
+                        <span>
+                            ● Online Assistant
+                        </span>
+                    </div>
+
+                </div>
+
+                <button onclick="closeChat()" class="close-btn">
+                    ×
+                </button>
+
+            </div>
+
+
+            <div id="chat-messages" class="chat-messages">
+
+                <div class="message bot-message">
+
+                    <div class="message-avatar">
+
+                        <img src="assets/logo.png"
+                             alt="AI">
+
+                    </div>
+
+                    <div class="message-content">
+
+                        <p>
+                            Hello! 👋 I'm the Inquisitors AI Assistant.
+                        </p>
+
+                        <p>
+                            I can help you with internships, membership,
+                            events, training, departments and other
+                            Inquisitors Society information.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="suggestions">
+
+                    <p class="suggestions-title">Suggested questions:</p>
+
+                    <button onclick="askQuestion('What is Inquisitors Society?')" class="suggestion-btn">
+                        What is Inquisitors?
+                    </button>
+
+                    <button onclick="askQuestion('What internship domains are available?')" class="suggestion-btn">
+                        Internship domains
+                    </button>
+
+                    <button onclick="askQuestion('How can I become a member?')" class="suggestion-btn">
+                        How to join
+                    </button>
+
+                    <button onclick="askQuestion('What events are happening?')" class="suggestion-btn">
+                        Upcoming events
+                    </button>
+
+                    <button onclick="askQuestion('What training programs are available?')" class="suggestion-btn">
+                        Training programs
+                    </button>
+
+                    <button onclick="askQuestion('How do I contact Inquisitors?')" class="suggestion-btn">
+                        Contact info
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <div class="chat-input-area">
+
+                <input
+                    type="text"
+                    id="user-input"
+                    placeholder="Ask something about Inquisitors..."
+                    autocomplete="off"
+                >
+
+                <button onclick="sendMessage()">
+                    ➤
+                </button>
+
+            </div>
+
+            <div class="chat-footer">
+                <div class="footer-content">
+                    <p>AI responses are based on the available knowledge base.</p>
+                    <div class="support-section">
+                        <button onclick="contactSupport()" class="support-btn" title="Contact human support">
+                            📞 Contact Support
+                        </button>
+                        <small>Need help? Contact us directly</small>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================
+         FLOATING CHAT BUTTON
+    ========================== -->
+
+    <button class="floating-chat"
+            onclick="openChat()">
+
+        <img src="assets/logo.png"
+             alt="Chat">
+
+        <span>Ask AI</span>
+
+    </button>
+
+
+    <footer>
+
+        <div class="footer-content">
+
+            <div class="footer-brand">
+
+                <img src="assets/logo.png"
+                     alt="Inquisitors">
+
+                <div>
+                    <h3>INQUISITORS</h3>
+                    <p>Learn • Grow • Build</p>
+                </div>
+
+            </div>
+
+            <p>
+                © 2026 Inquisitors Society — Prototype Interface
+            </p>
+
+        </div>
+
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
