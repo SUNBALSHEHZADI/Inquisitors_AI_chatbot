@@ -206,6 +206,23 @@ def root():
     }
 
 
+@app.get("/style.css")
+def stylesheet():
+    """Serve the frontend stylesheet for the same-origin app."""
+
+    return FileResponse(FRONTEND_PATH / "style.css", media_type="text/css")
+
+
+@app.get("/script.js")
+def frontend_script():
+    """Serve the frontend script for the same-origin app."""
+
+    return FileResponse(
+        FRONTEND_PATH / "script.js",
+        media_type="application/javascript"
+    )
+
+
 # ============================================================
 # HEALTH CHECK
 # ============================================================
