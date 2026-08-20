@@ -36,6 +36,22 @@ const chatMessages =
 const userInput =
     document.getElementById("user-input");
 
+const voiceInputButton =
+    document.getElementById("voice-input-btn");
+
+const voiceStatus =
+    document.getElementById("voice-status");
+
+const SpeechRecognition =
+    window.SpeechRecognition ||
+    window.webkitSpeechRecognition;
+
+let speechRecognition = null;
+
+let isListening = false;
+
+let speechEnabled = true;
+
 
 /* =========================================
    HISTORY STATE
@@ -106,6 +122,167 @@ function getSessionId() {
 
 let SESSION_ID =
     getSessionId();
+
+
+/* =========================================
+   VOICE FEATURES
+========================================= */
+
+function setVoiceStatus(message) {
+
+    if (voiceStatus) {
+
+        voiceStatus.textContent = message || "";
+
+    }
+
+}
+
+
+function initializeVoiceInput() {
+
+    if (!SpeechRecognition) {
+
+        if (voiceInputButton) {
+
+            voiceInputButton.disabled = true;
+            voiceInputButton.title = "Voice input is not supported in this browser";
+
+        }
+
+        setVoiceStatus("Voice input is unavailable in this browser.");
+
+        return;
+
+    }
+
+    speechRecognition = new SpeechRecognition();
+    speechRecognition.lang = "en-US";
+    speechRecognition.interimResults = true;
+    speechRecognition.continuous = false;
+
+    speechRecognition.onstart = function () {
+
+        isListening = true;
+
+        if (voiceInputButton) {
+
+            voiceInputButton.classList.add("listening");
+            voiceInputButton.textContent = "⏹";
+
+        }
+
+        setVoiceStatus("Listening... speak your question.");
+
+    };
+
+    speechRecognition.onresult = function (event) {
+
+        let transcript = "";
+
+        for (let index = event.resultIndex; index < event.results.length; index += 1) {
+
+            transcript += event.results[index][0].transcript;
+
+        }
+
+        if (userInput) {
+
+            userInput.value = transcript.trim();
+
+        }
+
+    };
+
+    speechRecognition.onerror = function (event) {
+
+        setVoiceStatus(
+            event.error === "not-allowed"
+                ? "Microphone permission was denied."
+                : "Voice input could not be completed."
+        );
+
+    };
+
+    speechRecognition.onend = function () {
+
+        isListening = false;
+
+        if (voiceInputButton) {
+
+            voiceInputButton.classList.remove("listening");
+            voiceInputButton.textContent = "🎙";
+
+        }
+
+        if (userInput && userInput.value.trim()) {
+
+            setVoiceStatus("Voice captured. Press send to ask.");
+
+        } else {
+
+            setVoiceStatus("");
+
+        }
+
+    };
+
+}
+
+
+function toggleVoiceInput() {
+
+    if (!speechRecognition) {
+
+        setVoiceStatus("Voice input is unavailable in this browser.");
+        return;
+
+    }
+
+    if (isListening) {
+
+        speechRecognition.stop();
+
+    } else {
+
+        speechRecognition.start();
+
+    }
+
+}
+
+
+function toggleSpeechOutput(button, message) {
+
+    if (!window.speechSynthesis) {
+
+        setVoiceStatus("Voice output is unavailable in this browser.");
+        return;
+
+    }
+
+    if (window.speechSynthesis.speaking) {
+
+        window.speechSynthesis.cancel();
+        button.textContent = "🔊";
+        return;
+
+    }
+
+    const utterance = new SpeechSynthesisUtterance(message);
+    utterance.lang = "en-US";
+    utterance.rate = 0.95;
+    utterance.onend = function () {
+        button.textContent = "🔊";
+    };
+
+    button.textContent = "⏹";
+    window.speechSynthesis.speak(utterance);
+
+}
+
+
+initializeVoiceInput();
 
 
 /* =========================================
@@ -911,6 +1088,15 @@ function addBotMessage(
 
             <p class="bot-response"></p>
 
+            <button
+                class="speak-btn"
+                type="button"
+                title="Read response aloud"
+                aria-label="Read response aloud"
+            >
+                🔊
+            </button>
+
         </div>
     `;
 
@@ -935,6 +1121,25 @@ function addBotMessage(
 
         paragraph.innerHTML =
             formatResponse(message);
+
+        const speakButton =
+            wrapper.querySelector(".speak-btn");
+
+        if (speakButton) {
+
+            speakButton.addEventListener(
+                "click",
+                function () {
+                    toggleSpeechOutput(
+                        speakButton,
+                        stripFormatting(message)
+                    );
+                }
+            );
+
+            speakButton.disabled = !speechEnabled || !window.speechSynthesis;
+
+        }
 
     }
 
@@ -1448,6 +1653,17 @@ function formatResponse(
                 return `<a href="${cleanUrl}" target="_blank" rel="noopener noreferrer">${cleanUrl}</a>${trailing}`;
             }
         );
+
+}
+
+
+function stripFormatting(text) {
+
+    return String(text ?? "")
+        .replace(/[*_`#]/g, "")
+        .replace(/https?:\/\/\S+/g, "official link")
+        .replace(/\s+/g, " ")
+        .trim();
 
 }
 

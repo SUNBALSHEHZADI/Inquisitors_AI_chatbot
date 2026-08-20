@@ -1110,6 +1110,79 @@ nav a:hover {
     font-size: 18px;
 }
 
+.chat-input-area .voice-btn {
+
+    width: 42px;
+
+    background: #eef8fa;
+
+    color: var(--primary-dark);
+
+    border: 1px solid var(--border);
+
+    font-size: 16px;
+
+}
+
+.chat-input-area .voice-btn:hover,
+.chat-input-area .voice-btn.listening {
+
+    background: var(--yellow);
+
+    color: var(--dark);
+
+}
+
+.chat-input-area .voice-btn:disabled {
+
+    opacity: 0.45;
+
+    cursor: not-allowed;
+
+}
+
+.voice-status {
+
+    min-height: 16px;
+
+    padding: 0 12px 4px;
+
+    color: var(--primary-dark);
+
+    font-size: 10px;
+
+    text-align: center;
+
+}
+
+.speak-btn {
+
+    border: none;
+
+    background: transparent;
+
+    color: var(--primary-dark);
+
+    cursor: pointer;
+
+    font-size: 14px;
+
+    padding: 2px 4px;
+
+}
+
+.speak-btn:hover {
+
+    color: var(--yellow-dark);
+
+}
+
+.speak-btn:disabled {
+
+    display: none;
+
+}
+
 .chat-footer {
 
     text-align: center;

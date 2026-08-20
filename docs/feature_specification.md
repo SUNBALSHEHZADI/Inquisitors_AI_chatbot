@@ -188,6 +188,25 @@ verified information."
 
 ---
 
+### 2.8 Voice Input and Output
+
+**Description:** Optional browser-native speech controls improve accessibility
+and hands-free use while preserving the existing text API.
+
+**Specifications:**
+- Speech input uses `SpeechRecognition` or `webkitSpeechRecognition`.
+- Recognition language defaults to English (`en-US`).
+- Captured speech is placed in the normal text input for review.
+- Speech output uses `SpeechSynthesisUtterance`.
+- The speaker control reads the assistant answer with Markdown symbols and
+  raw URLs removed from spoken text.
+- Unsupported browsers keep text chat functional and disable voice input.
+
+**Privacy:** The application does not upload an audio file or add a new audio
+endpoint. Audio processing follows the browser speech service behavior.
+
+---
+
 ## 3. API Endpoints
 
 ### 3.1 Chat Endpoint

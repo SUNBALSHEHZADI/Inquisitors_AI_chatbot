@@ -506,6 +506,16 @@
 
             <div class="chat-input-area">
 
+                <button
+                    id="voice-input-btn"
+                    class="voice-btn"
+                    onclick="toggleVoiceInput()"
+                    title="Use voice input"
+                    aria-label="Use voice input"
+                >
+                    🎙
+                </button>
+
                 <input
                     type="text"
                     id="user-input"
@@ -518,6 +528,8 @@
                 </button>
 
             </div>
+
+            <div id="voice-status" class="voice-status" aria-live="polite"></div>
 
             <div class="chat-footer">
                 <div class="footer-content">

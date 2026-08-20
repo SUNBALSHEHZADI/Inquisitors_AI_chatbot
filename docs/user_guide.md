@@ -373,6 +373,24 @@ If you clear browser data:
 | Esc | Close chat |
 | Ctrl + L | Clear input field |
 
+## Voice Features
+
+### Ask by Voice
+
+1. Open the chat.
+2. Select the microphone button beside the message field.
+3. Allow microphone access when the browser asks.
+4. Speak your question.
+5. Review the captured text and send it.
+
+### Listen to an Answer
+
+Select the speaker button below an assistant response. Select it again while
+speech is playing to stop playback.
+
+Voice controls depend on browser support. Text chat remains available when
+voice input or output is unavailable.
+
 ---
 
 ## Feedback & Suggestions

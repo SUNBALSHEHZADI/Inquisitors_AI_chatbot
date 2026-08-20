@@ -49,6 +49,7 @@ flowchart LR
 - Session persistence through LocalStorage and SQLite
 - Clickable official URLs in responses
 - Human support button with phone and social channels
+- Browser voice input and read-aloud controls
 - Friendly fallback for unsupported questions
 
 ## Slide 7 - Demonstration Walkthrough

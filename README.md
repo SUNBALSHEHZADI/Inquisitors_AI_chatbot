@@ -251,6 +251,16 @@ pytest test/test_chatbot.py -v
 pytest test/test_rag.py -v
 ```
 
+## Voice Features
+
+The browser chat supports native voice controls:
+
+- Use the microphone button to turn speech into a question.
+- Review the captured text, then send it through the normal chat flow.
+- Use the speaker button on an assistant response to hear it aloud.
+- Microphone permission is required for speech input.
+- Unsupported browsers disable voice input while keeping text chat available.
+
 ## 🛠️ Development
 
 ### Add New Knowledge
@@ -281,9 +291,9 @@ Edit `app/api/routes.py` - `top_k=3` parameter
 - Session management
 - RAG pipeline with FAISS
 - Multiple API endpoints
+- Browser voice input and response read-aloud
 
 ### 🔄 Optional (Planned)
-- Voice input/output
 - Multilingual support
 - User authentication
 - Analytics dashboard
