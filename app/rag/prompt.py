@@ -110,7 +110,9 @@ def get_sources(results):
 
         source = result.get("source")
 
-        if source and source not in sources:
+        text = result.get("text", "").strip()
+
+        if text and source and source not in sources:
 
             sources.append(source)
 

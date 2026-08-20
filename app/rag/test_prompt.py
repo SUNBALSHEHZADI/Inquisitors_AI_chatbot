@@ -2,13 +2,13 @@
 Test Prompt Builder
 """
 
-from retriever import (
+from app.rag.retriever import (
     load_vector_store,
     load_model,
     retrieve
 )
 
-from prompt import (
+from app.rag.prompt import (
     build_prompt
 )
 

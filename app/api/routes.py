@@ -51,6 +51,11 @@ from app.rag.memory import (
     clear_history
 )
 
+from app.config import (
+    DEFAULT_SESSION_ID,
+    MAX_MESSAGE_LENGTH
+)
+
 
 # ============================================================
 # ROUTER
@@ -68,11 +73,12 @@ class ChatRequest(BaseModel):
     message: str = Field(
         ...,
         min_length=1,
+        max_length=MAX_MESSAGE_LENGTH,
         description="User's chatbot message."
     )
 
     session_id: str = Field(
-        default="default-session",
+        default=DEFAULT_SESSION_ID,
         min_length=1,
         description="Unique conversation session ID."
     )

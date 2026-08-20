@@ -13,8 +13,16 @@ Research, Web Development, Content Writing, and Graphic Design.
 
 ## How can I become a member?
 
-Students can follow the official membership registration
-procedure provided by the administration.
+Follow the official communication channels for the current membership
+announcement, then use the registration instructions published by the
+administration. For help, contact +92 309 6888664.
+
+## Where do I register for membership or an internship?
+
+The current registration link is not recorded in the verified knowledge
+base. Check the official communication channels for the latest procedure
+or contact the administration directly. The chatbot must not invent a
+registration link.
 
 ## Does Inquisitors organize workshops?
 

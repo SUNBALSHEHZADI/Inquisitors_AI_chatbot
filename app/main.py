@@ -42,6 +42,13 @@ from app.rag.llm import (
     create_client
 )
 
+from app.config import (
+    ALLOWED_ORIGINS,
+    API_PREFIX,
+    APP_NAME,
+    APP_VERSION
+)
+
 
 # ============================================================
 # APPLICATION STARTUP
@@ -113,7 +120,7 @@ def initialize_system():
 # ============================================================
 
 app = FastAPI(
-    title="Inquisitors AI Assistant",
+    title=APP_NAME,
 
     description=(
         "RAG-based educational chatbot for "
@@ -121,7 +128,7 @@ app = FastAPI(
         "Groq LLM and SQLite conversation memory."
     ),
 
-    version="1.0.0"
+    version=APP_VERSION
 )
 
 
@@ -132,9 +139,7 @@ app = FastAPI(
 app.add_middleware(
     CORSMiddleware,
 
-    allow_origins=[
-        "*"
-    ],
+    allow_origins=ALLOWED_ORIGINS,
 
     allow_credentials=True,
 
@@ -164,7 +169,7 @@ def startup_event():
 
 app.include_router(
     router,
-    prefix="/api"
+    prefix=API_PREFIX
 )
 
 
@@ -179,9 +184,9 @@ def root():
     """
 
     return {
-        "name": "Inquisitors AI Assistant",
+        "name": APP_NAME,
         "status": "running",
-        "version": "1.0.0",
+        "version": APP_VERSION,
         "architecture": (
             "FastAPI + FAISS + RAG + Groq + SQLite"
         )
@@ -203,5 +208,5 @@ def health():
         "rag": "ready",
         "database": "sqlite",
         "llm": "groq",
-        "version": "1.0.0"
+        "version": APP_VERSION
     }

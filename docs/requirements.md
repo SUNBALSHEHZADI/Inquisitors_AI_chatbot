@@ -25,6 +25,22 @@ The chatbot will provide information about:
 - Contact information
 - Official communication channels
 
+## 2.1 Target Users
+
+- Students exploring the society, departments, training, and events
+- Prospective members seeking registration guidance
+- Internship applicants seeking domains and application information
+- Staff or volunteers answering routine information requests
+- Visitors seeking verified contact and social-media channels
+
+## 2.2 Scope Boundaries
+
+The assistant may summarize only information present in the approved
+knowledge base. It may provide official links and contact details, but it
+must not invent registration URLs, fees, deadlines, eligibility rules,
+personal advice, or actions on behalf of a user. Unsupported questions must
+receive a clear fallback and a route to official support.
+
 ## 3. Architecture
 
 User

@@ -2,7 +2,7 @@ Test_ID,Category,Test_Query,Expected_Response_Contains,Query_Type,Status,Actual_
 TC001,Normal_Query,What is Inquisitors Society?,Society,normal,PASS,"Inquisitors Society is a student-focused learning community",PASS,Correctly answers basic question
 TC002,Normal_Query,Tell me about the departments,departments,normal,PASS,"Society has multiple departments including",PASS,Retrieves department information
 TC003,Normal_Query,How can I become a member?,membership,normal,PASS,"follow the official membership registration",PASS,Provides membership process
-TC004,Normal_Query,What internships are available?,internships,normal,PASS,"internship domains include",normal,PASS,Lists internship opportunities
+TC004,Normal_Query,What internships are available?,internships,normal,PASS,"internship domains include",PASS,Lists internship opportunities
 TC005,Normal_Query,Tell me about upcoming events,events,normal,PASS,"events and competitions",PASS,Provides event information
 TC006,FAQ,What should I do if the chatbot cannot answer my question?,contact support,faq,PASS,"provide a fallback response",PASS,Demonstrates FAQ handling
 TC007,FAQ,Does Inquisitors organize workshops?,Yes,faq,PASS,"Yes. The society may organize workshops",PASS,Confirms workshop organization
@@ -12,30 +12,30 @@ TC010,Services,What services does Inquisitors provide?,services,normal,PASS,"ser
 TC011,Training,What training programs are available?,training,normal,PASS,"training programs",PASS,Lists training opportunities
 TC012,Complex_Query,I want to join the internship program and need help with the application process. Can you also tell me about the available domains?,internship,complex,PASS,"internship domains",PASS,Handles multi-part query
 TC013,Complex_Query,Tell me about membership benefits and how to register?,membership,complex,PASS,"membership registration",PASS,Addresses multiple related topics
-TC014,Incomplete_Query,Tell me about,incomplete,PASS,"Please ask a more specific question",PASS,Handles vague input
-TC015,Incomplete_Query,I want to know about,incomplete,PASS,"specific information",PASS,Requests clarification
-TC016,Misspelled_Query,Wat is Inquisitors Sosiety?,misspelled,PASS,"Society",PASS,Tolerates spelling errors (LLM handles)
-TC017,Misspelled_Query,intenship programms,misspelled,PASS,"internship",PASS,Corrects misspellings
-TC018,Unrelated_Query,How do I cook pizza?,out of scope,PASS,"fallback response",PASS,Rejects unrelated questions
-TC019,Unrelated_Query,What is the capital of France?,out of scope,PASS,"knowledge base",PASS,Stays within scope
-TC020,Repeated_Query,What is Inquisitors Society? What is Inquisitors Society?,repeated,PASS,"consistent response",PASS,Handles repetition
-TC021,Repeated_Query,Tell me about events. Tell me about events.,repeated,PASS,"identical answers",PASS,Repeatable responses
-TC022,Out_of_Scope,Do you have an AI girlfriend module?,out of scope,PASS,"cannot answer",PASS,Rejects inappropriate queries
-TC023,Out_of_Scope,Can you help me with my homework?,out of scope,PASS,"fallback message",PASS,Maintains boundaries
-TC024,Invalid_Query,!@#$%^&*(),invalid,PASS,"fallback response",PASS,Handles invalid input
-TC025,Invalid_Query,"INSERT DROP TABLE;",invalid,PASS,"cannot process",PASS,Rejects malicious input
-TC026,Long_Query,Tell me everything you know about Inquisitors Society including its departments and how to join and what internships are available and what events happen and what services are provided and training programs and social media and contact information?,long,PASS,"comprehensive answer",PASS,Handles long compound queries
-TC027,Long_Query,"Can you please provide detailed information about the Inquisitors Society focusing on all aspects including but not limited to organizational structure departments services offered to members membership requirements application process internship opportunities available domains expected duration learning outcomes contact details and any upcoming events or competitions that members should know about?",long,PASS,"detailed response",PASS,Processes lengthy queries
-TC028,Multi_Question,"What are the internship domains? How many internships are available?",multi_question,PASS,"domains","multiple questions",PASS,Addresses multiple related questions
-TC029,Multi_Question,"Tell me about events. What is the contact number?",multi_question,PASS,"events and contact",PASS,Handles topic switching
-TC030,Session_Management,Question 1: What is Inquisitors? | Question 2: Tell me more about it,session_context,PASS,"consistent context",PASS,Maintains session memory
-TC031,Session_Management,First question in new session should have unique session_id,session_tracking,PASS,"session_id returned",PASS,Creates new sessions
-TC032,Edge_Case,Empty string input,edge_case,PASS,"cannot be empty",PASS,Rejects empty messages
-TC033,Edge_Case,Single character query: a,edge_case,PASS,"valid response or error",PASS,Handles minimal input
-TC034,Edge_Case,Maximum length query (4000 chars),edge_case,PASS,"response within limits",PASS,Handles maximum input
-TC035,Knowledge_Grounding,Does Inquisitors have AI department? (not in KB),knowledge_grounding,PASS,"not available or fallback",PASS,Doesn't fabricate information
-TC036,Accuracy,Is the contact number +92 309 6888664 correct?,accuracy,PASS,"+92 309 6888664",PASS,Accurate information retrieval
-TC037,Accuracy,What training programs are mentioned?,accuracy,PASS,"specific program names",PASS,Correct data extraction
+TC014,Incomplete_Query,Tell me about,incomplete,incomplete,PASS,"Please ask a more specific question",PASS,Handles vague input
+TC015,Incomplete_Query,I want to know about,incomplete,incomplete,PASS,"specific information",PASS,Requests clarification
+TC016,Misspelled_Query,Wat is Inquisitors Sosiety?,misspelled,misspelled,PASS,"Society",PASS,Tolerates spelling errors (LLM handles)
+TC017,Misspelled_Query,intenship programms,misspelled,misspelled,PASS,"internship",PASS,Corrects misspellings
+TC018,Unrelated_Query,How do I cook pizza?,out of scope,out of scope,PASS,"fallback response",PASS,Rejects unrelated questions
+TC019,Unrelated_Query,What is the capital of France?,out of scope,out of scope,PASS,"knowledge base",PASS,Stays within scope
+TC020,Repeated_Query,What is Inquisitors Society? What is Inquisitors Society?,repeated,repeated,PASS,"consistent response",PASS,Handles repetition
+TC021,Repeated_Query,Tell me about events. Tell me about events.,repeated,repeated,PASS,"identical answers",PASS,Repeatable responses
+TC022,Out_of_Scope,Do you have an AI girlfriend module?,out of scope,out of scope,PASS,"cannot answer",PASS,Rejects inappropriate queries
+TC023,Out_of_Scope,Can you help me with my homework?,out of scope,out of scope,PASS,"fallback message",PASS,Maintains boundaries
+TC024,Invalid_Query,!@#$%^&*(),invalid,invalid,PASS,"fallback response",PASS,Handles invalid input
+TC025,Invalid_Query,"INSERT DROP TABLE;",invalid,invalid,PASS,"cannot process",PASS,Rejects malicious input
+TC026,Long_Query,Tell me everything you know about Inquisitors Society including its departments and how to join and what internships are available and what events happen and what services are provided and training programs and social media and contact information?,long,long,PASS,"comprehensive answer",PASS,Handles long compound queries
+TC027,Long_Query,"Can you please provide detailed information about the Inquisitors Society focusing on all aspects including but not limited to organizational structure departments services offered to members membership requirements application process internship opportunities available domains expected duration learning outcomes contact details and any upcoming events or competitions that members should know about?",long,long,PASS,"detailed response",PASS,Processes lengthy queries
+TC028,Multi_Question,"What are the internship domains? How many internships are available?",domains,multi_question,PASS,"domains",PASS,Addresses multiple related questions
+TC029,Multi_Question,"Tell me about events. What is the contact number?",multi_question,multi_question,PASS,"events and contact",PASS,Handles topic switching
+TC030,Session_Management,Question 1: What is Inquisitors? | Question 2: Tell me more about it,session_context,session_context,PASS,"consistent context",PASS,Maintains session memory
+TC031,Session_Management,First question in new session should have unique session_id,session_tracking,session_tracking,PASS,"session_id returned",PASS,Creates new sessions
+TC032,Edge_Case,Empty string input,edge_case,edge_case,PASS,"cannot be empty",PASS,Rejects empty messages
+TC033,Edge_Case,Single character query: a,edge_case,edge_case,PASS,"valid response or error",PASS,Handles minimal input
+TC034,Edge_Case,Maximum length query (4000 chars),edge_case,edge_case,PASS,"response within limits",PASS,Handles maximum input
+TC035,Knowledge_Grounding,Does Inquisitors have AI department? (not in KB),knowledge_grounding,knowledge_grounding,PASS,"not available or fallback",PASS,Doesn't fabricate information
+TC036,Accuracy,Is the contact number +92 309 6888664 correct?,accuracy,accuracy,PASS,"+92 309 6888664",PASS,Accurate information retrieval
+TC037,Accuracy,What training programs are mentioned?,accuracy,accuracy,PASS,"specific program names",PASS,Correct data extraction
 TC038,Fallback_Handling,What is the weather today?,fallback,PASS,"knowledge base","out of scope",PASS,Graceful fallback
-TC039,Error_Handling,Chatbot should handle backend errors gracefully,error_handling,PASS,"user-friendly error message",PASS,Proper error response
-TC040,User_Experience,Response should be professional and student-friendly,ux,PASS,"clear and helpful tone",PASS,Good UX response
+TC039,Error_Handling,Chatbot should handle backend errors gracefully,error_handling,error_handling,PASS,"user-friendly error message",PASS,Proper error response
+TC040,User_Experience,Response should be professional and student-friendly,ux,ux,PASS,"clear and helpful tone",PASS,Good UX response

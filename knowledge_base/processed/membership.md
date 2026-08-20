@@ -25,8 +25,17 @@ by the Inquisitors Society.
 
 ## Registration
 
-Students should follow the official membership registration procedure
-announced by the Inquisitors Society administration.
+Students can use this verified guidance:
+
+1. Follow the official WhatsApp, Facebook, and Instagram channels below.
+2. Check those channels for the current membership announcement and
+	registration instructions.
+3. Complete only the form or process published by the administration.
+4. Contact the official support number if the current instructions are
+	unclear or unavailable.
+
+The chatbot does not assume a registration URL, fee, deadline, document
+requirement, or approval procedure that has not been published officially.
 
 The chatbot should not provide an assumed registration link, fee,
 eligibility requirement, deadline, or approval procedure unless that

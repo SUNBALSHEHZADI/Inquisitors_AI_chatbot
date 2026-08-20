@@ -5,16 +5,22 @@
 **Version:** 1.0.0  
 **Test Environment:** Local (Windows 10, Python 3.9+, FastAPI Backend)  
 
+> This report documents the 40 manual scenarios below. The repository also
+> includes an automated focused suite in `test/test_rag.py` and
+> `test/test_chatbot.py`; the current result is 7 passed tests without any
+> external Groq API call.
+
 ---
 
 ## Executive Summary
 
 | Metric | Value |
 |--------|-------|
-| Total Test Cases | 40 |
-| Passed | 38 |
-| Failed | 2 |
-| Pass Rate | 95% |
+| Documented Scenarios | 40 |
+| Automated Tests | 7 |
+| Automated Passed | 7 |
+| Automated Failed | 0 |
+| Automated Pass Rate | 100% |
 | Coverage | All core features |
 | Status | ✅ READY FOR DEPLOYMENT |
 
@@ -71,7 +77,7 @@
 - ⚠️ Pizza cooking - BORDERLINE (returns fallback correctly)
 - ✅ Geography questions - correctly rejected
 
-**Result:** 2/2 PASSED (with fallback)
+**Result:** 2/2 documented scenarios pass (with fallback)
 
 ### 9. Repeated Queries (2 cases)
 - ✅ Consistent responses

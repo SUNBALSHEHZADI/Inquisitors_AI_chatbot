@@ -2,6 +2,10 @@
 
 An intelligent, knowledge-grounded chatbot for the Inquisitors Society powered by RAG (Retrieval-Augmented Generation), FAISS vector search, and Groq LLM.
 
+Project deliverables include the requirements audit, technical documentation,
+user guide, presentation outline, 40 manual scenarios, automated tests, and
+frontend screenshots in `screenshots/`.
+
 ## 🎯 Overview
 
 The Inquisitors AI Assistant provides real-time, accurate answers to questions about:
@@ -241,7 +245,8 @@ Run 30+ test cases:
 # View test cases
 cat test/test_cases.csv
 
-# Run pytest (when tests are implemented)
+# Run the automated tests
+python -m pytest test/test_rag.py test/test_chatbot.py -q
 pytest test/test_chatbot.py -v
 pytest test/test_rag.py -v
 ```

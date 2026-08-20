@@ -1,5 +1,25 @@
 # Inquisitors Chatbot - Requirements Compliance Checklist
 
+> **Current status (2026-08-20):** The original audit below is historical and
+> has been superseded. Core requirements, documentation, automated tests,
+> suggested questions, support escalation, navigation links, registration
+> guidance, configuration, presentation, and screenshots are now implemented.
+> Optional advanced features remain explicitly listed as future work.
+
+## Current Verification
+
+| Area | Status | Evidence |
+|------|--------|----------|
+| Core RAG chatbot | Complete | FastAPI, FAISS, Sentence Transformers, Groq, SQLite |
+| Registration guidance | Complete | `knowledge_base/processed/membership.md`, `faq.md` |
+| Suggested questions | Complete | `frontend/index.html`, `frontend/style.css` |
+| Navigation links | Complete | Verified URLs rendered as safe clickable links in `frontend/script.js` |
+| Human support | Complete | Support control and escalation information in the frontend |
+| Automated tests | Complete | 7 focused tests passing; 40 manual scenarios documented |
+| Documentation | Complete | Technical docs, user guide, presentation, and README |
+| Screenshots | Complete | `screenshots/chat-open.png`, `screenshots/chat-support.png` |
+| Optional advanced features | Future | Authentication, voice, multilingual, analytics, external integrations |
+
 ## Executive Summary
 **Status: 45% Complete**
 
