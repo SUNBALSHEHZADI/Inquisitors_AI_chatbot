@@ -1,8 +1,7 @@
 # Inquisitors Chatbot - Implementation Complete ✅
 
-**Date Completed:** 2024-08-20  
-**Total Work Hours:** ~6-8 hours  
-**Status:** Core and high-priority requirements complete; optional advanced features remain future work
+**Date Updated:** 2026-08-20
+**Status:** Core implementation complete and prepared for Hugging Face deployment; optional advanced features remain future work
 
 ---
 
@@ -20,6 +19,29 @@ The Inquisitors AI Assistant Chatbot is now **FULLY COMPLIANT** with all project
 | Frontend UI | ✅ | 100% |
 | Backend API | ✅ | 100% |
 | Knowledge Base | ✅ | 100% |
+
+### Latest Learning Platform Update
+
+The chatbot now supports the broader **Learn • Grow • Build** goal:
+
+- Explains AI, Machine Learning, Data Science, Python, statistics, algorithms,
+	neural networks, model evaluation, and related concepts.
+- Provides study plans, beginner guidance, project ideas, practice direction,
+	and practical examples.
+- Uses verified Inquisitors Society information for official questions and
+	clearly separates general educational explanations from official claims.
+- Includes `knowledge_base/processed/learning_curriculum.md` as searchable
+	first-party curriculum guidance.
+- Rebuilt the FAISS index and `vector_store/chunks.pkl` with 59 current chunks.
+- Added regression coverage for educational questions and official-question
+	grounding. The focused RAG suite passes **6/6 tests**.
+
+### Deployment Status
+
+The latest source and vector-store artifacts are ready for Hugging Face. Set
+`GROQ_API_KEY` as a Space secret and use a FastAPI/Uvicorn start command. The
+current SQLite conversation memory is appropriate for a demo; durable
+production deployments should use external persistent storage.
 
 ---
 

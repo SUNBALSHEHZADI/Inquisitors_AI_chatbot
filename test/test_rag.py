@@ -1,4 +1,9 @@
-from app.rag.prompt import build_context, build_prompt, get_sources
+from app.rag.prompt import (
+	build_context,
+	build_prompt,
+	get_sources,
+	is_educational_question,
+)
 from app.rag.retriever import build_search_query, is_relevant
 
 
@@ -46,3 +51,16 @@ def test_search_query_includes_recent_context_for_follow_up():
 
 	assert "How do I apply?" in query
 	assert "internships are available" in query
+
+
+def test_educational_questions_are_separate_from_official_questions():
+	assert is_educational_question("Explain overfitting in machine learning")
+	assert is_educational_question("What is a data science course?")
+	assert not is_educational_question("What is the Inquisitors membership process?")
+
+
+def test_prompt_allows_general_learning_explanations():
+	prompt = build_prompt("Explain neural networks", [])
+
+	assert "general educational knowledge" in prompt
+	assert "Never invent official dates" in prompt

@@ -1,27 +1,36 @@
 # Inquisitors Chatbot - Requirements Compliance Checklist
 
-> **Current status (2026-08-20):** The original audit below is historical and
-> has been superseded. Core requirements, documentation, automated tests,
-> suggested questions, support escalation, navigation links, registration
-> guidance, configuration, presentation, and screenshots are now implemented.
-> Optional advanced features remain explicitly listed as future work.
+> **Current status (2026-08-20):** Core implementation is complete and the
+> repository is ready for Hugging Face deployment. The original audit below is
+> historical and has been superseded by the current verification table.
 
 ## Current Verification
 
 | Area | Status | Evidence |
 |------|--------|----------|
 | Core RAG chatbot | Complete | FastAPI, FAISS, Sentence Transformers, Groq, SQLite |
+| Educational tutor mode | Complete | AI, ML, Data Science explanations, study plans, concepts, and project guidance |
+| Learning curriculum | Complete | `knowledge_base/processed/learning_curriculum.md` indexed into FAISS |
 | Registration guidance | Complete | `knowledge_base/processed/membership.md`, `faq.md` |
 | Suggested questions | Complete | `frontend/index.html`, `frontend/style.css` |
 | Navigation links | Complete | Verified URLs rendered as safe clickable links in `frontend/script.js` |
 | Human support | Complete | Support control and escalation information in the frontend |
-| Automated tests | Complete | 7 focused tests passing; 40 manual scenarios documented |
+| Automated tests | Complete | 6 focused RAG/prompt tests passing; 40 manual scenarios documented |
 | Documentation | Complete | Technical docs, user guide, presentation, and README |
 | Screenshots | Complete | `screenshots/chat-open.png`, `screenshots/chat-support.png` |
 | Optional advanced features | Future | Authentication, voice, multilingual, analytics, external integrations |
 
-## Executive Summary
-**Status: 45% Complete**
+## Deployment Readiness
+
+| Check | Status | Notes |
+|------|--------|-------|
+| GitHub source | Complete | Latest implementation pushed to `main` |
+| Vector store artifacts | Complete | `vector_store/inquisitors.index` and `chunks.pkl` rebuilt with curriculum |
+| Hugging Face configuration | Ready | Add `GROQ_API_KEY` and configure the FastAPI start command |
+| Persistent conversation storage | Review before production | SQLite is suitable for a demo; use an external database for durable hosted sessions |
+
+## Historical Audit Summary
+**Status at time of original audit: 45% Complete**
 
 Your project has a **working core chatbot** with RAG, LLM integration, and SQLite memory, but is **missing critical documentation, testing, and advanced features**.
 

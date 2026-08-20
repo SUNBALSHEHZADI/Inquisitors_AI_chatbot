@@ -39,7 +39,8 @@ from app.rag.retriever import (
 
 from app.rag.prompt import (
     build_prompt,
-    get_sources
+    get_sources,
+    is_educational_question
 )
 
 from app.rag.llm import (
@@ -314,7 +315,7 @@ def chat(request: ChatRequest):
     if (
         not results
         or not is_relevant(results)
-    ):
+    ) and not is_educational_question(question):
 
         fallback = (
             "I'm sorry, but I couldn't find reliable "
@@ -333,6 +334,9 @@ def chat(request: ChatRequest):
             session_id=session_id
 
         )
+
+    if not is_relevant(results):
+        results = []
 
 
     # --------------------------------------------------------
