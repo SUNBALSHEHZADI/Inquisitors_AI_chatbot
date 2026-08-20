@@ -1,0 +1,117 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="980" viewBox="0 0 1600 980" role="img" aria-labelledby="title desc">
+  <title id="title">Inquisitors AI Assistant system architecture</title>
+  <desc id="desc">Architecture showing the browser frontend, FastAPI backend, RAG retrieval pipeline, knowledge base, Groq language model, and SQLite conversation memory.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f8fbf7"/>
+      <stop offset="1" stop-color="#e8f2ef"/>
+    </linearGradient>
+    <linearGradient id="api" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0c7180"/>
+      <stop offset="1" stop-color="#14516a"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="10" stdDeviation="12" flood-color="#173f4e" flood-opacity=".14"/>
+    </filter>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#ef765d"/>
+    </marker>
+    <style>
+      .title { font: 700 38px 'Trebuchet MS', Arial, sans-serif; fill: #102b3a; }
+      .subtitle { font: 400 17px 'Trebuchet MS', Arial, sans-serif; fill: #65777b; }
+      .head { font: 700 22px 'Trebuchet MS', Arial, sans-serif; fill: #ffffff; }
+      .body { font: 400 17px 'Trebuchet MS', Arial, sans-serif; fill: #27414a; }
+      .small { font: 700 14px 'Trebuchet MS', Arial, sans-serif; fill: #65777b; letter-spacing: 1.5px; }
+      .box { fill: #ffffff; stroke: #d7e5e2; stroke-width: 2; }
+      .line { stroke: #ef765d; stroke-width: 3; fill: none; marker-end: url(#arrow); }
+      .dashed { stroke-dasharray: 9 8; }
+    </style>
+  </defs>
+
+  <rect width="1600" height="980" fill="url(#bg)"/>
+  <circle cx="1430" cy="110" r="180" fill="#ef765d" opacity=".08"/>
+  <circle cx="120" cy="880" r="220" fill="#079bb4" opacity=".07"/>
+
+  <text x="90" y="82" class="title">Inquisitors AI Assistant</text>
+  <text x="90" y="116" class="subtitle">Learn • Grow • Build | RAG-based educational chatbot architecture</text>
+
+  <g filter="url(#shadow)">
+    <rect x="90" y="175" width="300" height="180" rx="16" class="box"/>
+    <rect x="90" y="175" width="300" height="54" rx="16" fill="#079bb4"/>
+    <rect x="90" y="213" width="300" height="16" fill="#079bb4"/>
+    <text x="120" y="210" class="head">1. Browser Frontend</text>
+    <text x="120" y="266" class="body">HTML / CSS / JavaScript</text>
+    <text x="120" y="296" class="body">Chat, voice, session UI</text>
+    <text x="120" y="326" class="body">Fetch API + localStorage</text>
+  </g>
+
+  <g filter="url(#shadow)">
+    <rect x="500" y="145" width="600" height="240" rx="16" fill="url(#api)"/>
+    <text x="545" y="190" class="head">2. FastAPI Application Layer</text>
+    <text x="545" y="235" class="body" fill="#ffffff">Same-origin frontend serving + REST API</text>
+    <text x="545" y="270" class="body" fill="#ffffff">POST /api/chat</text>
+    <text x="545" y="300" class="body" fill="#ffffff">GET /api/history/{session_id}</text>
+    <text x="545" y="330" class="body" fill="#ffffff">Validation, CORS, errors, startup initialization</text>
+    <text x="545" y="360" class="body" fill="#ffffff">app/main.py + app/api/routes.py</text>
+  </g>
+
+  <path d="M390 265 H500" class="line"/>
+  <text x="408" y="245" class="small">HTTP / JSON</text>
+
+  <g filter="url(#shadow)">
+    <rect x="500" y="485" width="600" height="300" rx="16" class="box"/>
+    <rect x="500" y="485" width="600" height="54" rx="16" fill="#ef765d"/>
+    <rect x="500" y="523" width="600" height="16" fill="#ef765d"/>
+    <text x="545" y="520" class="head">3. RAG + Educational Tutor Pipeline</text>
+    <text x="545" y="578" class="body">Question classification: official or educational</text>
+    <text x="545" y="612" class="body">Sentence Transformers embedding</text>
+    <text x="545" y="646" class="body">FAISS similarity retrieval and relevance filtering</text>
+    <text x="545" y="680" class="body">Grounded prompt with source context</text>
+    <text x="545" y="714" class="body">General concept explanations when appropriate</text>
+    <text x="545" y="748" class="body">app/rag/retriever.py + prompt.py + llm.py</text>
+  </g>
+
+  <path d="M800 385 V485" class="line"/>
+  <text x="820" y="438" class="small">QUESTION</text>
+
+  <g filter="url(#shadow)">
+    <rect x="90" y="485" width="300" height="170" rx="16" class="box"/>
+    <rect x="90" y="485" width="300" height="54" rx="16" fill="#173f4e"/>
+    <rect x="90" y="523" width="300" height="16" fill="#173f4e"/>
+    <text x="120" y="520" class="head">4. Knowledge Sources</text>
+    <text x="120" y="578" class="body">Verified society Markdown</text>
+    <text x="120" y="608" class="body">AI / ML / Data Science curriculum</text>
+    <text x="120" y="638" class="body">Internships, events, FAQ, contact</text>
+  </g>
+
+  <path d="M390 570 H500" class="line dashed"/>
+  <text x="402" y="550" class="small">INDEXED CONTENT</text>
+
+  <g filter="url(#shadow)">
+    <rect x="1210" y="485" width="300" height="170" rx="16" class="box"/>
+    <rect x="1210" y="485" width="300" height="54" rx="16" fill="#079bb4"/>
+    <rect x="1210" y="523" width="300" height="16" fill="#079bb4"/>
+    <text x="1240" y="520" class="head">5. Groq LLM</text>
+    <text x="1240" y="578" class="body">Generates the final response</text>
+    <text x="1240" y="608" class="body">Uses grounded prompt context</text>
+    <text x="1240" y="638" class="body">Returns student-friendly Markdown</text>
+  </g>
+
+  <path d="M1100 635 H1210" class="line"/>
+  <text x="1115" y="615" class="small">PROMPT</text>
+
+  <g filter="url(#shadow)">
+    <rect x="500" y="850" width="600" height="80" rx="16" fill="#ffffff" stroke="#d7e5e2" stroke-width="2"/>
+    <text x="545" y="900" class="body">6. SQLite conversation memory | session history and follow-ups</text>
+  </g>
+
+  <path d="M800 785 V850" class="line"/>
+  <text x="820" y="825" class="small">SAVE TURN</text>
+
+  <path d="M1210 655 C1210 745 1120 785 1050 785" class="line dashed"/>
+  <text x="1145" y="738" class="small">ANSWER</text>
+
+  <text x="90" y="735" class="small">GROUNDING RULE</text>
+  <text x="90" y="765" class="body">Official society facts stay verified.</text>
+  <text x="90" y="795" class="body">Academic concepts can be taught.</text>
+</svg>

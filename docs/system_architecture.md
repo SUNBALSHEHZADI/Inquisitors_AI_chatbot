@@ -6,6 +6,36 @@
 
 ---
 
+## 1.1 Current Architecture Diagram
+
+The current system serves the frontend and FastAPI API from one local or
+hosted origin. Educational questions can use the tutor mode, while official
+Inquisitors Society facts remain grounded in verified knowledge-base content.
+
+![Inquisitors AI Assistant architecture](../screenshots/system-architecture.png)
+
+### Mermaid Version
+
+```mermaid
+flowchart LR
+  U[Browser Frontend\nHTML / CSS / JavaScript] -->|HTTP JSON| A[FastAPI Application\nserves frontend + REST API]
+  A --> R[RAG and Educational Tutor\nquestion mode, retrieval, prompt builder]
+  K[Verified Knowledge Base\nSociety + AI/ML/Data Science curriculum] -. indexed content .-> R
+  R --> F[FAISS Vector Store\nSentence Transformers embeddings]
+  R --> G[Groq LLM\nstudent-friendly response]
+  A --> M[(SQLite Memory\nsession history)]
+  G --> A
+  A --> U
+```
+
+![Standalone architecture image](../screenshots/system-architecture.png)
+
+The standalone image is also available at
+`screenshots/system-architecture.png` for use in presentation slides or a
+PDF report. The editable vector source is `screenshots/system-architecture.svg`.
+
+---
+
 ## 1. Architecture Overview
 
 ```

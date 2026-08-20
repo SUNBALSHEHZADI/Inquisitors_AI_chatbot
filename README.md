@@ -6,6 +6,12 @@ Project deliverables include the requirements audit, technical documentation,
 user guide, presentation outline, 40 manual scenarios, automated tests, and
 frontend screenshots in `screenshots/`.
 
+The final project report is available in editable and submission formats:
+
+- `docs/final_project_report.md` - editable Markdown source
+- `docs/final-project-report.docx` - editable formatted report
+- `docs/final-project-report.pdf` - PDF submission copy
+
 ## 🎯 Overview
 
 The Inquisitors AI Assistant provides real-time, accurate answers to questions about:
