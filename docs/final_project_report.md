@@ -2,8 +2,8 @@
 ## Final Project Report
 
 **Project:** Inquisitors AI Assistant Chatbot  
-**Team Member:** [Your Name]  
-**Teammate:** [Teammate Name]  
+**Team Member:** Sunbal Shehzadi  
+**Teammate:** 5 Members
 **GitHub Repository:** https://github.com/SUNBALSHEHZADI/Inquisitors_AI_chatbot  
 **Date:** 20 August 2026  
 
